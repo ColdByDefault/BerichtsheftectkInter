@@ -1,3 +1,5 @@
+![2](https://github.com/ColdByDefault/BerichtsheftectkInter/assets/155304740/8bdbcbb8-7074-45c0-9ff0-3dec287e0c3b)
+![1](https://github.com/ColdByDefault/BerichtsheftectkInter/assets/155304740/95caa3b2-1444-42ab-8849-cdb6e1b9c5e7)
 Welcome to beRich.py 
 Berichtsheft Application Documentation
 
