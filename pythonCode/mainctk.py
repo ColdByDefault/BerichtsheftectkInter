@@ -274,13 +274,17 @@ for i, label in enumerate(info_labels, start=0):
     ctk.CTkLabel(frame1, text=new_labels[i]).grid(row=i, column=0, padx=10, pady=3)
     ctk.CTkEntry(frame1, textvariable=replacements[label], width=200, height=55).grid(row=i, column=1, padx=60, pady=8)
 
-# Function to dynamically update the option menu
+# bitch ctkinter has issues with updating menus
+""" # Function to dynamically update the option menu
 def update_option_menu():
     current_options = list(notes.keys())
-    lf_num_menu.set_values(current_options)
+    lf_num_menu['menu'].delete(0, 'end')  # Clear the existing options
+    for option in current_options:
+        lf_num_menu['menu'].add_command(label=option, command=lambda value=option: replacements['[lf_num]'].set(value))
     if replacements['[lf_num]'].get() not in current_options:
         replacements['[lf_num]'].set(current_options[0])
     update_text_fields()
+
 
 # Function to update text fields based on the selected learning field
 def update_text_fields():
@@ -288,16 +292,16 @@ def update_text_fields():
     schedule = notes.get(selected_lf, {})
     for i, day in enumerate(['montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag']):
         text_boxes[i].delete("1.0", "end")
-        text_boxes[i].insert("1.0", schedule.get(day, "Keine Information"))
+        text_boxes[i].insert("1.0", schedule.get(day, "Keine Information")) """
 
 # Initialize and place the option menu in the GUI
 lf_num_options = list(notes.keys())  # Initial options from notes
-replacements['[lf_num]'].set(lf_num_options[0]) if lf_num_options else None
+#replacements['[lf_num]'].set(lf_num_options[0]) if lf_num_options else None
 lf_num_menu = ctk.CTkOptionMenu(frame1, variable=replacements['[lf_num]'], values=lf_num_options, command=lambda _: update_text_fields())
 lf_num_menu.grid(row=8, column=1, padx=60, pady=8)
 
-# Call this function whenever you modify the 'notes' dictionary or when initializing the application
-update_option_menu()
+
+#update_option_menu()
 
 # Update Texts Button (new)
 update_texts_btn = ctk.CTkButton(frame1, text="Update Texts", command=update_text_fields)
