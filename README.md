@@ -1,7 +1,7 @@
 Welcome to beRich.py 
 Berichtsheft Application Documentation
 
-# For WindowsOS .exe ==> .\dist\mainctk.exe
+
  
 
 ### Introduction
