@@ -274,7 +274,7 @@ for i, label in enumerate(info_labels, start=0):
     ctk.CTkLabel(frame1, text=new_labels[i]).grid(row=i, column=0, padx=10, pady=3)
     ctk.CTkEntry(frame1, textvariable=replacements[label], width=200, height=55).grid(row=i, column=1, padx=60, pady=8)
 
-# bitch ctkinter has issues with updating menus
+# ctkinter has issues with updating menus
 """ # Function to dynamically update the option menu
 def update_option_menu():
     current_options = list(notes.keys())
